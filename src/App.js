@@ -1,21 +1,17 @@
 import React from "react";
 import "./App.css";
+import "./sass/index.scss";
+
+import Header from "./components/Header";
+import Grid from "./components/Grid";
+import Rules from "./components/Rules";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer">
-          Learn React
-        </a>
-      </header>
+    <div className="App-header">
+      <Header />
+      <Grid />
+      <Rules />
     </div>
   );
 }
