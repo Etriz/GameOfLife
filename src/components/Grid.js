@@ -1,4 +1,8 @@
 import React, { useState, useEffect } from "react";
+// import "../sass/grid.scss";
+
+import { Button, ButtonGroup } from "@material-ui/core";
+import Presets from "./Presets";
 
 const Cell = (props) => {
   const { row, col, cellClass, selectCell } = props;
@@ -10,7 +14,7 @@ const Grid02 = () => {
   const [numRows] = useState(25);
   const [numCols] = useState(25);
   const [gens, setGens] = useState(0);
-  const [lifeSpeed] = useState(100);
+  const [lifeSpeed, setLifeSpeed] = useState(100);
   const [isRunning, setIsRunning] = useState(false);
 
   const makeEmptyGrid = () => {
@@ -776,7 +780,7 @@ const Grid02 = () => {
   };
 
   const runGameOfLife = () => {
-    console.log("life finds a way");
+    // console.log("life finds a way");
     let nextGrid = copyArray(grid);
 
     for (let r = 0; r < numRows; r++) {
@@ -844,18 +848,30 @@ const Grid02 = () => {
 
   return (
     <>
-      <p>Generation: {gens}</p>
-      <div>
-        <button onClick={() => startGame()}>{isRunning ? "Stop" : "Start"}</button>
-        <button onClick={() => clearGrid()}>Clear</button>
-        <br />
-        <button onClick={() => randomSeed()}>Random</button>
-        <button onClick={() => makeGlider()}>Make Glider</button>
-        <button onClick={() => makePulsar()}>Make Pulsar</button>
+      <div className="gridArea">
+        <p>Generation: {gens}</p>
+        <div className="grid" style={{ width: numCols * 20 }}>
+          {gridLayout()}
+        </div>
+        <ButtonGroup
+          className="buttongroup"
+          variant="contained"
+          color="primary"
+          orientation="horizontal"
+          disableElevation>
+          <Button onClick={() => startGame()}>{isRunning ? "Stop" : "Start"}</Button>
+          <Button onClick={() => clearGrid()} disabled={isRunning}>
+            Clear
+          </Button>
+        </ButtonGroup>
       </div>
-      <div className="grid" style={{ width: numCols * 20 }}>
-        {gridLayout()}
-      </div>
+      <Presets
+        randomSeed={randomSeed}
+        makeGlider={makeGlider}
+        makePulsar={makePulsar}
+        isRunning={isRunning}
+        setLifeSpeed={setLifeSpeed}
+      />
     </>
   );
 };
