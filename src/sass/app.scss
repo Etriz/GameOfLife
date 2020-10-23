@@ -50,6 +50,7 @@ main {
   .grid {
     display: flex;
     flex-wrap: wrap;
+    border: 2px solid black;
     .cell {
       width: 20px;
       height: 20px;
@@ -91,6 +92,18 @@ main {
   flex-direction: column;
   justify-content: center;
   font-size: 1.25rem;
+  p {
+    margin-top: 0;
+  }
+}
+.about {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 1rem;
+  h3 {
+    border-bottom: 1px solid black;
+  }
   p {
     margin-top: 0;
   }

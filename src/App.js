@@ -4,6 +4,7 @@ import "./sass/app.scss";
 import Header from "./components/Header";
 import Grid from "./components/Grid";
 import Rules from "./components/Rules";
+import About from "./components/About";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Grid />
         <Rules />
       </main>
+      <About />
     </div>
   );
 }

@@ -850,7 +850,7 @@ const Grid02 = () => {
     <>
       <div className="gridArea">
         <p>Generation: {gens}</p>
-        <div className="grid" style={{ width: numCols * 20 }}>
+        <div className="grid" style={{ width: numCols * 20 + 4 }}>
           {gridLayout()}
         </div>
         <ButtonGroup
