@@ -3,7 +3,7 @@ import React from "react";
 const Rules = () => {
   return (
     <div className="rules">
-      <h3>The rules for the simulation are:</h3>
+      <p>The rules for the simulation are:</p>
       <p>
         The grid has an area of 25x25 squares.
         <br />
